@@ -1,0 +1,141 @@
+:root {
+    --bg-color: #f9fbff;
+    --primary-blue: #0055d2; /* Biru UPPKB */
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --dot-color: #cbd5e1;
+    --accent-orange: #f97316; /* Tetap pakai sedikit warna orange lama untuk typing */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* Background Pattern Dots */
+.dot-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 25px 25px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px 25px;
+}
+
+.brand {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 50px;
+}
+
+.brand span {
+    color: var(--primary-blue);
+}
+
+.greeting {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.role {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+#typing-text {
+    color: var(--accent-orange);
+}
+
+/* Cursor Animation */
+.cursor {
+    color: var(--primary-blue);
+    font-weight: 400;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Navigation - Responsive Flex */
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+    margin-bottom: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+/* Button Gaya Clean */
+.btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: transparent;
+    color: var(--text-dark);
+    border: 2px solid var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--text-dark);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+footer {
+    margin-top: 210px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.heart { color: #ef4444; }
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .brand { font-size: 36px; margin-bottom: 30px; }
+    .nav-links ul { gap: 15px 20px; }
+    .nav-links a { font-size: 16px; }
+    .role, .greeting { font-size: 20px; }
+}
